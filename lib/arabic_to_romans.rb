@@ -1,15 +1,18 @@
 NUMERALS = {
-  1000 => "M",
-  500  => "D",
-  100  => "C",
-  50   => "L",
-  10   => "X",
-  9    => "IX",
-  5    => "V",
+  1    => "I",
   4    => "IV",
-  1    => "I"
+  5    => "V",
+  9    => "IX",
+  10   => "X",
+  40   => "XL",
+  50   => "L",
+  90   => "XC",
+  100  => "C",
+  400  => "CD",
+  500  => "D",
+  900  => "DM",
+  1000 => "M"
 }
-
 def get_closest_arabic_number_from_hash(number)
   closest_number = NUMERALS.sort_by{|key, value| key}.select{|arabic, roman| arabic <= number}.last
 end
@@ -29,4 +32,4 @@ class Fixnum
 
 end
 
-puts 2014.to_romans
+puts 90.to_romans
